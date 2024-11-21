@@ -1,30 +1,20 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.hilt)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
-    namespace = "com.eniskaner.eyojvideocourse"
+    namespace = "com.eniskaner.navigationcourseapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.eniskaner.eyojvideocourse"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        debug {
-            isDebuggable = true
-            applicationIdSuffix = ".debug"
-        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -39,10 +29,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
-    }
-    buildFeatures {
-        viewBinding = true
-        buildConfig = true
     }
     packaging {
         resources {
@@ -66,18 +52,11 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.hilt.navigation.fragment)
-
-    // hilt
-    //kapt(libs.hilt.android.compiler)
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
 }
