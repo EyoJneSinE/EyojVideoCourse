@@ -7,17 +7,47 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.navigation.NavController
+import androidx.navigation.createGraph
+import androidx.navigation.fragment.NavHostFragment
+import com.eniskaner.eyojvideocourse.databinding.ActivityMainBinding
+import com.eniskaner.navigationcourseapp.NavigationGraph
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
+    @Inject
+    lateinit var navigationGraph: @JvmSuppressWildcards Set<NavigationGraph>
+
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         setupWindowInsets()
         setupSystemBars()
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        navController = navHostFragment.navController
+        setupNavGraph()
+    }
+
+    private fun setupNavGraph() {
+        navController.graph = navController.createGraph(
+            startDestination = "",
+        ) {
+            navigationGraph.forEach { navNodes ->
+                navNodes.addNav(this)
+            }
+        }
     }
 
     private fun setupSystemBars() {
