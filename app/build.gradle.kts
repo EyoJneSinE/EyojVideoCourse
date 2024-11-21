@@ -77,7 +77,8 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.fragment)
 
     // hilt
-    //kapt(libs.hilt.android.compiler)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+
+    implementation(project(":navigationcourseapp"))
 }
