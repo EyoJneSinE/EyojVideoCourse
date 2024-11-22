@@ -1,0 +1,44 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "title": "Introduction to Programming",
+            "category_id": 1,
+            "description": "Learn the basics of programming with hands-on examples.",
+            "price": "Free",
+            "thumbnail_url": "https://example.com/thumbnail1.png"
+        },
+        {
+            "id": 2,
+            "title": "Advanced Machine Learning",
+            "category_id": 2,
+            "description": "Master advanced ML techniques.",
+            "price": "$49.99",
+            "thumbnail_url": "https://example.com/thumbnail2.png"
+        },
+        {
+            "id": 3,
+            "title": "Web Development",
+            "category_id": 1,
+            "description": "Learn front-end and back-end web development.",
+            "price": "$29.99",
+            "thumbnail_url": "https://example.com/thumbnail3.png"
+        },
+        {
+            "id": 4,
+            "title": "Introduction to AI",
+            "category_id": 2,
+            "description": "Start your journey in artificial intelligence.",
+            "price": "$19.99",
+            "thumbnail_url": "https://example.com/thumbnail4.png"
+        },
+        {
+            "id": 5,
+            "title": "Graphic Design Basics",
+            "category_id": 3,
+            "description": "Learn the principles of graphic design.",
+            "price": "Free",
+            "thumbnail_url": "https://example.com/thumbnail5.png"
+        }
+    ]
+}
