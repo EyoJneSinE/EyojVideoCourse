@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "EyojVideoCourse"
 include(":app")
 include(":navigationcourseapp")
+include(":core:common")
