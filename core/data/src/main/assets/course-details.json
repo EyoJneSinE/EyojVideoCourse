@@ -1,114 +1,112 @@
-{
-    "courses": [
-        {
-            "id": 1,
-            "title": "Introduction to Programming",
-            "category_id": 1,
-            "description": "Learn the basics of programming with hands-on examples. Includes topics like variables, loops, and functions.",
-            "price": "Free",
-            "thumbnail_url": "https://example.com/thumbnail1.png",
-            "lessons": [
-                {
-                    "lesson_id": 1,
-                    "title": "Introduction",
-                    "duration": "10:00",
-                    "video_url": "https://example.com/video1.mp4"
-                },
-                {
-                    "lesson_id": 2,
-                    "title": "Variables and Data Types",
-                    "duration": "20:00",
-                    "video_url": "https://example.com/video2.mp4"
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "title": "Advanced Machine Learning",
-            "category_id": 2,
-            "description": "Master advanced ML techniques including neural networks and reinforcement learning.",
-            "price": "$49.99",
-            "thumbnail_url": "https://example.com/thumbnail2.png",
-            "lessons": [
-                {
-                    "lesson_id": 1,
-                    "title": "Neural Networks Basics",
-                    "duration": "15:00",
-                    "video_url": "https://example.com/video3.mp4"
-                },
-                {
-                    "lesson_id": 2,
-                    "title": "Reinforcement Learning",
-                    "duration": "25:00",
-                    "video_url": "https://example.com/video4.mp4"
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "title": "Web Development",
-            "category_id": 1,
-            "description": "Learn front-end and back-end web development with hands-on projects.",
-            "price": "$29.99",
-            "thumbnail_url": "https://example.com/thumbnail3.png",
-            "lessons": [
-                {
-                    "lesson_id": 1,
-                    "title": "HTML Basics",
-                    "duration": "12:00",
-                    "video_url": "https://example.com/video5.mp4"
-                },
-                {
-                    "lesson_id": 2,
-                    "title": "CSS and Styling",
-                    "duration": "18:00",
-                    "video_url": "https://example.com/video6.mp4"
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "title": "Introduction to AI",
-            "category_id": 2,
-            "description": "Start your journey in artificial intelligence. Explore topics like neural networks and supervised learning.",
-            "price": "$19.99",
-            "thumbnail_url": "https://example.com/thumbnail4.png",
-            "lessons": [
-                {
-                    "lesson_id": 1,
-                    "title": "What is AI?",
-                    "duration": "10:00",
-                    "video_url": "https://example.com/video7.mp4"
-                },
-                {
-                    "lesson_id": 2,
-                    "title": "Supervised Learning",
-                    "duration": "15:00",
-                    "video_url": "https://example.com/video8.mp4"
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "title": "Graphic Design Basics",
-            "category_id": 3,
-            "description": "Learn the principles of graphic design. Discover color theory, typography, and layout basics.",
-            "price": "Free",
-            "thumbnail_url": "https://example.com/thumbnail5.png",
-            "lessons": [
-                {
-                    "lesson_id": 1,
-                    "title": "Introduction to Graphic Design",
-                    "duration": "12:00",
-                    "video_url": "https://example.com/video9.mp4"
-                },
-                {
-                    "lesson_id": 2,
-                    "title": "Color Theory Basics",
-                    "duration": "18:00",
-                    "video_url": "https://example.com/video10.mp4"
-                }
-            ]
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "title": "Introduction to Programming",
+        "category_id": 1,
+        "description": "Learn the basics of programming with hands-on examples. Includes topics like variables, loops, and functions.",
+        "price": "Free",
+        "thumbnail_url": "https://example.com/thumbnail1.png",
+        "lessons": [
+            {
+                "lesson_id": 1,
+                "title": "Introduction",
+                "duration": "10:00",
+                "video_url": "https://example.com/video1.mp4"
+            },
+            {
+                "lesson_id": 2,
+                "title": "Variables and Data Types",
+                "duration": "20:00",
+                "video_url": "https://example.com/video2.mp4"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Advanced Machine Learning",
+        "category_id": 2,
+        "description": "Master advanced ML techniques including neural networks and reinforcement learning.",
+        "price": "$49.99",
+        "thumbnail_url": "https://example.com/thumbnail2.png",
+        "lessons": [
+            {
+                "lesson_id": 1,
+                "title": "Neural Networks Basics",
+                "duration": "15:00",
+                "video_url": "https://example.com/video3.mp4"
+            },
+            {
+                "lesson_id": 2,
+                "title": "Reinforcement Learning",
+                "duration": "25:00",
+                "video_url": "https://example.com/video4.mp4"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Web Development",
+        "category_id": 1,
+        "description": "Learn front-end and back-end web development with hands-on projects.",
+        "price": "$29.99",
+        "thumbnail_url": "https://example.com/thumbnail3.png",
+        "lessons": [
+            {
+                "lesson_id": 1,
+                "title": "HTML Basics",
+                "duration": "12:00",
+                "video_url": "https://example.com/video5.mp4"
+            },
+            {
+                "lesson_id": 2,
+                "title": "CSS and Styling",
+                "duration": "18:00",
+                "video_url": "https://example.com/video6.mp4"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Introduction to AI",
+        "category_id": 2,
+        "description": "Start your journey in artificial intelligence. Explore topics like neural networks and supervised learning.",
+        "price": "$19.99",
+        "thumbnail_url": "https://example.com/thumbnail4.png",
+        "lessons": [
+            {
+                "lesson_id": 1,
+                "title": "What is AI?",
+                "duration": "10:00",
+                "video_url": "https://example.com/video7.mp4"
+            },
+            {
+                "lesson_id": 2,
+                "title": "Supervised Learning",
+                "duration": "15:00",
+                "video_url": "https://example.com/video8.mp4"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Graphic Design Basics",
+        "category_id": 3,
+        "description": "Learn the principles of graphic design. Discover color theory, typography, and layout basics.",
+        "price": "Free",
+        "thumbnail_url": "https://example.com/thumbnail5.png",
+        "lessons": [
+            {
+                "lesson_id": 1,
+                "title": "Introduction to Graphic Design",
+                "duration": "12:00",
+                "video_url": "https://example.com/video9.mp4"
+            },
+            {
+                "lesson_id": 2,
+                "title": "Color Theory Basics",
+                "duration": "18:00",
+                "video_url": "https://example.com/video10.mp4"
+            }
+        ]
+    }
+]
