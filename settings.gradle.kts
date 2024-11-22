@@ -23,3 +23,5 @@ rootProject.name = "EyojVideoCourse"
 include(":app")
 include(":navigationcourseapp")
 include(":core:common")
+include(":feature:main:courselist")
+include(":feature:main:coursecommunicator")
