@@ -74,4 +74,5 @@ dependencies {
 
     implementation(project(":navigationcourseapp"))
     implementation(project(":core:common"))
+    implementation(project(":feature:main:coursecommunicator"))
 }
