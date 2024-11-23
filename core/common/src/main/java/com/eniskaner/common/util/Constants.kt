@@ -16,12 +16,12 @@ object Constants {
     }
 
     object AssetConstants {
-        const val ALL_COURSE_LIST = "all_courses.json"
-        const val COURSE_DETAIL = "course_details.json"
-        const val COURSE_CATEGORIES = "course_categories.json"
-        const val CATEGORY_TECHNOLOGY = "category_technology.json"
-        const val CATEGORY_AI = "category_ai.json"
-        const val CATEGORY_DESIGN = "category_design.json"
+        const val ALL_COURSE_LIST = "all-courses.json"
+        const val COURSE_DETAIL = "course-details.json"
+        const val COURSE_CATEGORIES = "course-categories.json"
+        const val CATEGORY_TECHNOLOGY = "category-technology.json"
+        const val CATEGORY_AI = "category-ai.json"
+        const val CATEGORY_DESIGN = "category-design.json"
     }
 
     object ErrorMessages {

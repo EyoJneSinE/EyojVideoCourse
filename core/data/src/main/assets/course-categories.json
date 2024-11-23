@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Technology",
+        "icon_url": "https://example.com/technology_icon.png",
+        "color": "#6200EE"
+    },
+    {
+        "id": 2,
+        "name": "AI",
+        "icon_url": "https://example.com/ai_icon.png",
+        "color": "#03DAC5"
+    },
+    {
+        "id": 3,
+        "name": "Design",
+        "icon_url": "https://example.com/design_icon.png",
+        "color": "#FF5722"
+    }
+]

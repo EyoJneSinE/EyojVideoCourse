@@ -1,0 +1,9 @@
+[
+    {
+        "id": 5,
+        "title": "Graphic Design Basics",
+        "description": "Learn the principles of graphic design.",
+        "price": "Free",
+        "thumbnail_url": "https://example.com/thumbnail5.png"
+    }
+]
