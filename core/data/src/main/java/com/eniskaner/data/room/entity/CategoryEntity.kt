@@ -1,14 +1,12 @@
 package com.eniskaner.data.room.entity
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.eniskaner.common.util.Constants.DatabaseObjectConstants.CATEGORY_TABLE_NAME
 
-@Entity(tableName = "category")
+@Entity(tableName = CATEGORY_TABLE_NAME)
 data class CategoryEntity(
     val id: Int,
     val name: String,
-    @ColumnInfo("icon_url") val iconUrl: String,
+    val iconUrl: String,
     val color: String
 )
