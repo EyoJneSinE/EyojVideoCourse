@@ -7,6 +7,7 @@ import androidx.room.Query
 import com.eniskaner.data.room.entity.CategoryEntity
 import com.eniskaner.data.room.entity.CourseDetailEntity
 import com.eniskaner.data.room.entity.CourseEntity
+import com.eniskaner.data.room.entity.LessonEntity
 
 @Dao
 interface CourseDao {
@@ -36,9 +37,9 @@ interface CourseDao {
     suspend fun saveCourseCategories(courseCategories: List<CategoryEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveCourse(course: CourseEntity)
+    suspend fun saveLesson(lesson: List<LessonEntity>)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveCategory(category: CategoryEntity)
+    @Query("SELECT * FROM lesson WHERE lessonId = :lessonId")
+    suspend fun getCourseLesson(lessonId: Int): List<LessonEntity>
 
 }

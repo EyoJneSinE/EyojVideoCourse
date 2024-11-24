@@ -3,6 +3,7 @@ package com.eniskaner.data.datasource
 import com.eniskaner.data.room.entity.CategoryEntity
 import com.eniskaner.data.room.entity.CourseDetailEntity
 import com.eniskaner.data.room.entity.CourseEntity
+import com.eniskaner.data.room.entity.LessonEntity
 
 interface CourseLocalDataSource {
 
@@ -21,5 +22,9 @@ interface CourseLocalDataSource {
     suspend fun getCourseCategories(): List<CategoryEntity>
 
     suspend fun saveCourseCategories(courseCategories: List<CategoryEntity>)
+
+    suspend fun getCourseLesson(lessonId: Int): List<LessonEntity>
+
+    suspend fun saveCourseLesson(courseLesson: List<LessonEntity>)
 
 }

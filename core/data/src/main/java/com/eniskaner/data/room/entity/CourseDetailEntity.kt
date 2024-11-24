@@ -1,16 +1,16 @@
 package com.eniskaner.data.room.entity
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
-import com.eniskaner.data.model.LessonDto
+import androidx.room.PrimaryKey
+import com.eniskaner.common.util.Constants.DatabaseObjectConstants.COURSE_DETAIL_TABLE_NAME
 
-@Entity(tableName = "course_detail")
+@Entity(tableName = COURSE_DETAIL_TABLE_NAME)
 data class CourseDetailEntity(
-    val id: Int,
+    @PrimaryKey val id: Int,
     val title: String,
-    @ColumnInfo("category_id") val categoryId: Int,
+    val categoryId: Int,
     val description: String,
     val price: String,
-    @ColumnInfo("thumbnail_url") val thumbnailUrl: String,
-    val lessons: List<LessonDto>
+    val thumbnailUrl: String,
+    val lessons: List<LessonEntity>
 )
