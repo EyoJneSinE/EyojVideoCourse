@@ -3,6 +3,7 @@ package com.eniskaner.data.di
 import android.content.Context
 import android.content.res.AssetManager
 import androidx.room.Room
+import com.eniskaner.common.util.Constants.DatabaseObjectConstants.COURSE_DB_NAME
 import com.eniskaner.data.room.database.CourseDatabase
 import dagger.Module
 import dagger.Provides
@@ -32,6 +33,6 @@ object CourseDataModule {
         Room.databaseBuilder(
             context,
             CourseDatabase::class.java,
-            "course_database"
+            COURSE_DB_NAME
         ).build()
 }
