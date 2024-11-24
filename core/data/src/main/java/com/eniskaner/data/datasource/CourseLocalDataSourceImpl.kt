@@ -4,6 +4,7 @@ import com.eniskaner.data.room.database.CourseDatabase
 import com.eniskaner.data.room.entity.CategoryEntity
 import com.eniskaner.data.room.entity.CourseDetailEntity
 import com.eniskaner.data.room.entity.CourseEntity
+import com.eniskaner.data.room.entity.LessonEntity
 import javax.inject.Inject
 
 class CourseLocalDataSourceImpl @Inject constructor(
@@ -33,5 +34,11 @@ class CourseLocalDataSourceImpl @Inject constructor(
 
     override suspend fun saveCourseCategories(courseCategories: List<CategoryEntity>) =
         courseDatabase.getCourseDao().saveCourseCategories(courseCategories = courseCategories)
+
+    override suspend fun getCourseLesson(lessonId: Int): List<LessonEntity> =
+        courseDatabase.getCourseDao().getCourseLesson(lessonId = lessonId)
+
+    override suspend fun saveCourseLesson(courseLesson: List<LessonEntity>) =
+        courseDatabase.getCourseDao().saveLesson(lesson = courseLesson)
 
 }

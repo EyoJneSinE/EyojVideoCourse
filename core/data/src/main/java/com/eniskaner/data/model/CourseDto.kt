@@ -1,5 +1,7 @@
 package com.eniskaner.data.model
 
+import com.eniskaner.common.util.Constants.DatabaseObjectConstants.DTO_CATEGORY_ID
+import com.eniskaner.common.util.Constants.DatabaseObjectConstants.DTO_THUMBNAIL_URL
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -7,8 +9,8 @@ import kotlinx.serialization.Serializable
 data class CourseDto(
     val id: Int,
     val title: String,
-    @SerialName("category_id") val categoryId: Int,
+    @SerialName(DTO_CATEGORY_ID) val categoryId: Int,
     val description: String,
     val price: String,
-    @SerialName("thumbnail_url") val thumbnailUrl: String
+    @SerialName(DTO_THUMBNAIL_URL) val thumbnailUrl: String
 )
