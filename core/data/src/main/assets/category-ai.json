@@ -1,0 +1,16 @@
+[
+    {
+        "id": 2,
+        "title": "Advanced Machine Learning",
+        "description": "Master advanced ML techniques.",
+        "price": "$49.99",
+        "thumbnail_url": "https://example.com/thumbnail2.png"
+    },
+    {
+        "id": 4,
+        "title": "Introduction to AI",
+        "description": "Start your journey in artificial intelligence.",
+        "price": "$19.99",
+        "thumbnail_url": "https://example.com/thumbnail4.png"
+    }
+]
