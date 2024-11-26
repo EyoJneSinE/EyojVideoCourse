@@ -12,7 +12,7 @@ import com.eniskaner.data.room.entity.LessonEntity
 @Dao
 interface CourseDao {
 
-    @Query("SELECT * FROM course where category_id = :categoryId")
+    @Query("SELECT * FROM course where id = :categoryId")
     suspend fun getCourseListByCategory(categoryId: Int): List<CourseEntity>
 
     @Query("SELECT * FROM course WHERE title LIKE '%' || :query || '%'")
@@ -21,7 +21,7 @@ interface CourseDao {
     @Query("SELECT * FROM course")
     suspend fun getCourseList(): List<CourseEntity>
 
-    @Query("SELECT * FROM course WHERE id = :courseId")
+    @Query("SELECT * FROM course_detail WHERE id = :courseId")
     suspend fun getCourseDetail(courseId: Int): CourseDetailEntity?
 
     @Query("SELECT * FROM category")
