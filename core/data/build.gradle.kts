@@ -54,6 +54,9 @@ dependencies {
     ksp(libs.androidx.room.compiler)
     implementation(libs.kotlinx.serialization)
 
+    //Gson
+    implementation(libs.gson)
+
     implementation(project(":core:common"))
     implementation(project(":core:domain"))
 }
