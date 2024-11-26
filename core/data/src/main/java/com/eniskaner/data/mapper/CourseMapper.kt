@@ -54,7 +54,8 @@ class LessonDtoToUIModelMapper @Inject constructor() : Mapper<LessonDto, LessonU
             lessonId = input.lessonId,
             title = input.title,
             duration = input.duration,
-            videoUrl = input.videoUrl
+            videoUrl = input.videoUrl,
+            videoImage = input.videoImage
         )
     }
 }
@@ -70,6 +71,7 @@ class CourseDetailDtoToUIModelMapper @Inject constructor(
             id = input.id,
             title = input.title,
             categoryId = input.categoryId,
+            categoryName = input.categoryName,
             description = input.description,
             price = input.price,
             thumbnailUrl = input.thumbnailUrl,
@@ -118,7 +120,8 @@ class LessonDtoToEntityMapper @Inject constructor() : Mapper<LessonDto, LessonEn
             lessonId = input.lessonId,
             title = input.title,
             duration = input.duration,
-            videoUrl = input.videoUrl
+            videoUrl = input.videoUrl,
+            videoImage = input.videoImage
         )
     }
 }
@@ -134,6 +137,7 @@ class CourseDetailDtoToEntityMapper @Inject constructor(
             id = input.id,
             title = input.title,
             categoryId = input.categoryId,
+            categoryName = input.categoryName,
             description = input.description,
             price = input.price,
             thumbnailUrl = input.thumbnailUrl,
@@ -182,7 +186,8 @@ class LessonEntityToUIModelMapper @Inject constructor() : Mapper<LessonEntity, L
             lessonId = input.lessonId,
             title = input.title,
             duration = input.duration,
-            videoUrl = input.videoUrl
+            videoUrl = input.videoUrl,
+            videoImage = input.videoImage
         )
     }
 }
@@ -198,6 +203,7 @@ class CourseDetailEntityToUIModelMapper @Inject constructor(
             id = input.id,
             title = input.title,
             categoryId = input.categoryId,
+            categoryName = input.categoryName,
             description = input.description,
             price = input.price,
             thumbnailUrl = input.thumbnailUrl,

@@ -9,5 +9,6 @@ data class LessonEntity(
     @PrimaryKey val lessonId: Int,
     val title: String,
     val duration: String,
-    val videoUrl: String
+    val videoUrl: String,
+    val videoImage: String
 )
