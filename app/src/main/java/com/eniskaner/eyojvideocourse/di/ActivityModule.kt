@@ -8,19 +8,18 @@ import com.eniskaner.eyojvideocourse.R
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.qualifiers.ActivityContext
-import dagger.hilt.components.SingletonComponent
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ActivityComponent::class)
 object ActivityModule {
 
     @Provides
-    fun provideActivity(@ActivityContext context: Context): NavController {
-        val activity = context as FragmentActivity
+    fun provideActivity(@ActivityContext activityContext: Context): NavController {
+        val activity = activityContext as FragmentActivity
         val navHostFragment =
             activity.supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         return navHostFragment.navController
     }
-
 }

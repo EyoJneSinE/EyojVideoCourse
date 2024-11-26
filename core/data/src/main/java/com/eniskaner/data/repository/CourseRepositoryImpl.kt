@@ -75,7 +75,7 @@ class CourseRepositoryImpl @Inject constructor(
             }
         )
 
-    override suspend fun getCourseCategory(categoryId: Int): Flow<Resource<List<CategoryUIModel>>> =
+    override suspend fun getCourseCategory(): Flow<Resource<List<CategoryUIModel>>> =
         checkLocalThenRemote(
             localFetcher = {
                 courseLocalDataSource.getCourseCategories().takeIf { it.isNotEmpty() }

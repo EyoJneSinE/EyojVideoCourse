@@ -81,4 +81,10 @@ dependencies {
     ksp(libs.hilt.android.compiler)
 
     implementation(project(":navigationcourseapp"))
+    implementation(project(":core:common"))
+    implementation(project(":core:data"))
+    implementation(project(":core:domain"))
+    implementation(project(":feature:main:coursecommunicator"))
+    implementation(project(":feature:main:courselist"))
+    implementation(project(":feature:main:coursedetail"))
 }

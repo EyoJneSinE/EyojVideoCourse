@@ -37,6 +37,7 @@ class CourseDtoToUIModelMapper @Inject constructor() : Mapper<CourseDto, CourseU
             id = input.id,
             title = input.title,
             categoryId = input.categoryId,
+            categoryName = input.categoryName,
             description = input.description,
             price = input.price,
             thumbnailUrl = input.thumbnailUrl
@@ -100,6 +101,7 @@ class CourseDtoToEntityMapper @Inject constructor() : Mapper<CourseDto, CourseEn
             id = input.id,
             title = input.title,
             categoryId = input.categoryId,
+            categoryName = input.categoryName,
             description = input.description,
             price = input.price,
             thumbnailUrl = input.thumbnailUrl
@@ -143,8 +145,7 @@ class CourseDetailDtoToEntityMapper @Inject constructor(
 /**
  * CategoryEntity to CategoryUIModel Mapper
  */
-class CategoryEntityToUIModelMapper @Inject constructor() :
-    Mapper<CategoryEntity, CategoryUIModel> {
+class CategoryEntityToUIModelMapper @Inject constructor() : Mapper<CategoryEntity, CategoryUIModel> {
     override fun map(input: CategoryEntity): CategoryUIModel {
         return CategoryUIModel(
             id = input.id,
@@ -164,6 +165,7 @@ class CourseEntityToUIModelMapper @Inject constructor() : Mapper<CourseEntity, C
             id = input.id,
             title = input.title,
             categoryId = input.categoryId,
+            categoryName = input.categoryName,
             description = input.description,
             price = input.price,
             thumbnailUrl = input.thumbnailUrl

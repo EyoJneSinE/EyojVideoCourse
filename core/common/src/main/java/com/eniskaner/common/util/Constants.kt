@@ -31,6 +31,7 @@ object Constants {
         const val COURSE_DETAIL_TABLE_NAME = "course_detail"
         const val CATEGORY_ICON_URL = "icon_url"
         const val DTO_CATEGORY_ID = "category_id"
+        const val DTO_CATEGORY_NAME = "category_name"
         const val DTO_THUMBNAIL_URL = "thumbnail_url"
         const val LESSON_ID = "lesson_id"
         const val LESSON_VIDEO_URL = "video_url"

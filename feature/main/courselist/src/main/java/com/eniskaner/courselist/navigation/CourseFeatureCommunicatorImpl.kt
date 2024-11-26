@@ -1,19 +1,14 @@
 package com.eniskaner.courselist.navigation
 
-import androidx.navigation.NavController
-import com.eniskaner.coursecommunicator.VideoCourseCommunicator
-import com.eniskaner.navigationcourseapp.navigateWithAnimation
-import javax.inject.Inject
-
-class CourseFeatureCommunicatorImpl @Inject constructor(
+/*class CourseFeatureCommunicatorImpl @Inject constructor(
     private val navController: NavController
-) : VideoCourseCommunicator {
+) : CourseFeatureCommunicator {
 
-    override fun launchVideoCourseFeature(videoCourseFeatureArgs: VideoCourseCommunicator.VideoCourseFeatureArgs) {
+    override fun launchCourseFeature(courseFeatureArgs: CourseFeatureCommunicator.CourseFeatureArgs) {
         navController.navigateWithAnimation(
             route = CoursesNavGraph.ROUTE,
-            popUpTo = videoCourseFeatureArgs.previousRoute,
+            popUpTo = courseFeatureArgs.previousRoute,
             inclusive = false
         )
     }
-}
+}*/

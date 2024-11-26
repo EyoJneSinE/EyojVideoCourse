@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import androidx.navigation.createGraph
 import androidx.navigation.fragment.NavHostFragment
+import com.eniskaner.courselist.navigation.CoursesNavGraph
 import com.eniskaner.eyojvideocourse.databinding.ActivityMainBinding
 import com.eniskaner.navigationcourseapp.NavigationGraph
 import dagger.hilt.android.AndroidEntryPoint
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupNavGraph() {
         navController.graph = navController.createGraph(
-            startDestination = "",
+            startDestination = CoursesNavGraph.ROUTE,
         ) {
             navigationGraph.forEach { navNodes ->
                 navNodes.addNav(this)
