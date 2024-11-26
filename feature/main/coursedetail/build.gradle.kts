@@ -62,7 +62,11 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.hilt.navigation.fragment)
 
+    //Glide
+    implementation(libs.glide)
+
     implementation(project(":navigationcourseapp"))
     implementation(project(":core:common"))
     implementation(project(":feature:main:coursecommunicator"))
+    implementation(project(":core:domain"))
 }
