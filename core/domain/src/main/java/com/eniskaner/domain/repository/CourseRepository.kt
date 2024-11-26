@@ -13,7 +13,7 @@ interface CourseRepository {
 
     suspend fun getCourseDetail(id: Int): Flow<Resource<CourseDetailUIModel?>>
 
-    suspend fun getCourseCategory(categoryId: Int): Flow<Resource<List<CategoryUIModel>>>
+    suspend fun getCourseCategory(): Flow<Resource<List<CategoryUIModel>>>
 
     suspend fun getCourseListBySearch(query: String): Flow<Resource<List<CourseUIModel>>>
 

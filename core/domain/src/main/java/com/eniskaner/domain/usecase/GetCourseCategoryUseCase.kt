@@ -6,6 +6,6 @@ import javax.inject.Inject
 class GetCourseCategoryUseCase @Inject constructor(
     private val courseRepository: CourseRepository
 ) {
-    suspend operator fun invoke(categoryId: Int) =
-        courseRepository.getCourseCategory(categoryId = categoryId)
+    suspend operator fun invoke() =
+        courseRepository.getCourseCategory()
 }
