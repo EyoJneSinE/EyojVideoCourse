@@ -24,6 +24,7 @@ kotlinxSerialization = "1.6.3"
 lottieVersion = "6.5.0"
 viewbinding = "8.7.2"
 activityCompose = "1.10.0-beta01"
+gsonVersion = "2.11.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,6 +48,8 @@ hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.r
 javax-inject = { group = "javax.inject", name = "javax.inject", version.ref = "javaxInject" }
 #Lottie Animation
 airbnb-lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottieVersion"}
+# Gson
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gsonVersion" }
 
 #ROOM
 androidx-room-runtime = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
