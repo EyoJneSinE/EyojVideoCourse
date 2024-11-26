@@ -1,4 +1,12 @@
 <resources>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enroll_now">Enroll Now</string>
+    <string name="complete_your_payment">Complete Your Payment</string>
+    <string name="amount">Amount: %1$s</string>
+    <string name="payment_successful">Payment Successful!</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="empty_string" />
+    <string name="payment_completed_successfully">Payment completed successfully!</string>
+    <string name="video_duration">Duration: %1$s min</string>
 </resources>
