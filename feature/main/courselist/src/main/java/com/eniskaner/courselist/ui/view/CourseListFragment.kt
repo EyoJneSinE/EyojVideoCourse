@@ -49,7 +49,7 @@ class CourseListFragment : Fragment(R.layout.fragment_course_list), CourseClickL
         setUIWithSearchCourses()
     }
 
-    private fun initRecyclerView() = with(binding.rvSatelliteList) {
+    private fun initRecyclerView() = with(binding.rvCourseList) {
         adapter = courseListAdapter
         layoutManager = LinearLayoutManager(requireContext())
     }
@@ -71,15 +71,6 @@ class CourseListFragment : Fragment(R.layout.fragment_course_list), CourseClickL
         }
     }
 
-    private fun getFinalList(): List<CourseUIModel> {
-        val state = coursesViewModel.courseListUIState.value
-        return when {
-            state.query.isNotBlank() -> state.searchResults
-            state.selectedCategoryId != null -> state.filteredCourses
-            else -> state.courses
-        }
-    }
-
     private fun setUIWithSearchCourses() = with(binding) {
         searchView.setOnQueryTextListener(CourseSearchTextWatcher { query ->
             coursesViewModel.onEvent(CourseEvent.SearchCourses(query = query))
@@ -88,7 +79,7 @@ class CourseListFragment : Fragment(R.layout.fragment_course_list), CourseClickL
 
 
     private fun setProgressBar(isLoading: Boolean) {
-        binding.progressBarSatellites.isVisible = isLoading
+        binding.progressBarCourseList.isVisible = isLoading
     }
 
     override fun courseClicked(id: Int) {
