@@ -46,7 +46,6 @@ class CourseVideoFragment : Fragment(R.layout.fragment_course_video) {
             preparePlayer(it)
         }
 
-        adjustLayoutForOrientation(resources.configuration.orientation)
     }
 
     @OptIn(UnstableApi::class)
@@ -58,22 +57,6 @@ class CourseVideoFragment : Fragment(R.layout.fragment_course_video) {
             prepare()
         }
         binding.playerView.player = exoPlayer
-    }
-
-    private fun adjustLayoutForOrientation(orientation: Int) {
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            binding.playerView.layoutParams = ConstraintLayout.LayoutParams(
-                ConstraintLayout.LayoutParams.MATCH_PARENT,
-                ConstraintLayout.LayoutParams.MATCH_PARENT
-            )
-            (activity as? FullscreenHandler)?.enterFullscreen()
-        } else {
-            binding.playerView.layoutParams = ConstraintLayout.LayoutParams(
-                ConstraintLayout.LayoutParams.MATCH_PARENT,
-                ConstraintLayout.LayoutParams.WRAP_CONTENT
-            )
-            (activity as? FullscreenHandler)?.exitFullscreen()
-        }
     }
 
     private fun releasePlayer() {
@@ -103,8 +86,4 @@ class CourseVideoFragment : Fragment(R.layout.fragment_course_video) {
         releasePlayer()
     }
 
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        adjustLayoutForOrientation(newConfig.orientation)
-    }
 }
