@@ -38,4 +38,9 @@ object Constants {
         const val LESSON_VIDEO_URL = "video_url"
         const val LESSON_VIDEO_IMAGE = "video_image"
     }
+
+    object ExoPlayerConstants {
+        const val PLAYBACK_POSITION_KEY = "playback_position"
+        const val PLAY_WHEN_READY_KEY = "play_when_ready"
+    }
 }
