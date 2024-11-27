@@ -77,6 +77,9 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.auth)
 
+    //timber
+    implementation(libs.timber)
+
     implementation(project(":navigationcourseapp"))
     implementation(project(":core:common"))
     implementation(project(":feature:main:coursecommunicator"))
