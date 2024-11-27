@@ -1,21 +1,27 @@
 package com.eniskaner.coursevideo.ui.view
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.OptIn
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.media3.common.MediaItem
 import androidx.media3.common.util.UnstableApi
-import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
-import androidx.media3.exoplayer.hls.HlsMediaSource
-import androidx.media3.exoplayer.source.ProgressiveMediaSource
+import com.eniskaner.common.util.Constants.ExoPlayerConstants.PLAYBACK_POSITION_KEY
+import com.eniskaner.common.util.Constants.ExoPlayerConstants.PLAY_WHEN_READY_KEY
 import com.eniskaner.common.util.parcelable
 import com.eniskaner.common.util.viewBinding
 import com.eniskaner.coursecommunicator.CourseFeatureCommunicator
+import com.eniskaner.coursevideo.R
 import com.eniskaner.coursevideo.databinding.FragmentCourseVideoBinding
+import com.eniskaner.coursevideo.ui.util.FullscreenHandler
+import dagger.hilt.android.AndroidEntryPoint
 
-class CourseVideoFragment : Fragment() {
+@UnstableApi
+@AndroidEntryPoint
+class CourseVideoFragment : Fragment(R.layout.fragment_course_video) {
 
     private val binding: FragmentCourseVideoBinding by viewBinding(FragmentCourseVideoBinding::bind)
 
@@ -26,34 +32,47 @@ class CourseVideoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val args =
-            arguments?.parcelable(CourseFeatureCommunicator.COURSE_FEATURE_NAV_KEY) as? CourseFeatureCommunicator.CourseFeatureArgs
-        args?.videoUrl?.let {
-
+        savedInstanceState?.let {
+            playbackPosition = it.getLong(PLAYBACK_POSITION_KEY, 0L)
+            playWhenReady = it.getBoolean(PLAY_WHEN_READY_KEY, true)
+            exoPlayer?.playWhenReady = playWhenReady
+            exoPlayer?.seekTo(playbackPosition)
         }
-        preparePlayer()
+
+        val args = arguments?.parcelable<CourseFeatureCommunicator.CourseFeatureArgs>(
+            CourseFeatureCommunicator.COURSE_FEATURE_NAV_KEY
+        )
+        args?.videoUrl?.let {
+            preparePlayer(it)
+        }
+
+        adjustLayoutForOrientation(resources.configuration.orientation)
     }
 
     @OptIn(UnstableApi::class)
-    private fun preparePlayer() {
-        val args =
-            arguments?.parcelable(CourseFeatureCommunicator.COURSE_FEATURE_NAV_KEY) as? CourseFeatureCommunicator.CourseFeatureArgs
-
-        exoPlayer = ExoPlayer.Builder(requireContext()).build()
-        exoPlayer?.playWhenReady = true
+    private fun preparePlayer(uri: String) {
+        exoPlayer = ExoPlayer.Builder(requireContext()).build().apply {
+            playWhenReady = this@CourseVideoFragment.playWhenReady
+            setMediaItem(MediaItem.fromUri(uri))
+            seekTo(playbackPosition)
+            prepare()
+        }
         binding.playerView.player = exoPlayer
-        val defaultHttpDataSourceFactory = DefaultHttpDataSource.Factory()
-        args?.videoUrl?.let {
-            val mediaItem = MediaItem.fromUri(it)
-            val mediaSource =
-                ProgressiveMediaSource.Factory(defaultHttpDataSourceFactory)
-                    .createMediaSource(mediaItem)
-            exoPlayer?.apply {
-                setMediaSource(mediaSource)
-                seekTo(playbackPosition)
-                playWhenReady = playWhenReady
-                prepare()
-            }
+    }
+
+    private fun adjustLayoutForOrientation(orientation: Int) {
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            binding.playerView.layoutParams = ConstraintLayout.LayoutParams(
+                ConstraintLayout.LayoutParams.MATCH_PARENT,
+                ConstraintLayout.LayoutParams.MATCH_PARENT
+            )
+            (activity as? FullscreenHandler)?.enterFullscreen()
+        } else {
+            binding.playerView.layoutParams = ConstraintLayout.LayoutParams(
+                ConstraintLayout.LayoutParams.MATCH_PARENT,
+                ConstraintLayout.LayoutParams.WRAP_CONTENT
+            )
+            (activity as? FullscreenHandler)?.exitFullscreen()
         }
     }
 
@@ -63,6 +82,14 @@ class CourseVideoFragment : Fragment() {
             playWhenReady = player.playWhenReady
             player.release()
             exoPlayer = null
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        exoPlayer?.let { player ->
+            outState.putLong(PLAYBACK_POSITION_KEY, player.currentPosition)
+            outState.putBoolean(PLAY_WHEN_READY_KEY, player.playWhenReady)
         }
     }
 
@@ -76,8 +103,8 @@ class CourseVideoFragment : Fragment() {
         releasePlayer()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        releasePlayer()
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        adjustLayoutForOrientation(newConfig.orientation)
     }
 }

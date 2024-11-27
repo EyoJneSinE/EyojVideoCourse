@@ -3,11 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fl_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.view.CourseVideoFragment">
 
-    <androidx.media3.ui.PlayerControlView
+    <androidx.media3.ui.PlayerView
         android:id="@+id/player_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +24,25 @@
         tools:show_subtitle_button="true"
         tools:use_artwork="true"
         tools:use_controller="true"
-        tools:use_sensor_rotation="true"/>
+        tools:use_sensor_rotation="true" />
+
+    <!--<androidx.media3.ui.PlayerControlView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />-->
+
+    <!--<TextView
+        android:id="@+id/tv_s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:text="@string/exo_download_completed"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>-->
 
 
 
