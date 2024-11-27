@@ -15,6 +15,7 @@ interface CourseFeatureCommunicator {
     data class CourseFeatureArgs(
         val previousRoute: String,
         val courseId: Int? = null,
-        val courseCategoryId: Int? = null
+        val courseCategoryId: Int? = null,
+        val videoUrl: String? = null
     ) : Parcelable
 }
