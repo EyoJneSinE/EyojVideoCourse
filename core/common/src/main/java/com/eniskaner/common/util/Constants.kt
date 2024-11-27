@@ -43,4 +43,10 @@ object Constants {
         const val PLAYBACK_POSITION_KEY = "playback_position"
         const val PLAY_WHEN_READY_KEY = "play_when_ready"
     }
+
+    object FirebaseConstants {
+        const val FIREBASE_TAG = "FirebaseAuth"
+        const val CONFIRM_PASSWORD_ERROR = "Passwords not the same"
+        const val NEED_PASSWORD = "Need Password"
+    }
 }
