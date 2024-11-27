@@ -69,4 +69,5 @@ dependencies {
     implementation(project(":core:common"))
     implementation(project(":feature:main:coursecommunicator"))
     implementation(project(":core:domain"))
+    implementation(project(":feature:main:coursevideo"))
 }
