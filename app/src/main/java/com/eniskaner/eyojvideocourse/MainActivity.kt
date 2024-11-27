@@ -22,7 +22,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), FullscreenHandler{
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -71,17 +71,5 @@ class MainActivity : AppCompatActivity(), FullscreenHandler{
             view.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-    }
-
-    @RequiresApi(Build.VERSION_CODES.R)
-    override fun enterFullscreen() {
-        window.insetsController?.hide(WindowInsets.Type.systemBars())
-        window.insetsController?.systemBarsBehavior =
-            WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-    }
-
-    @RequiresApi(Build.VERSION_CODES.R)
-    override fun exitFullscreen() {
-        window.insetsController?.show(WindowInsets.Type.systemBars())
     }
 }

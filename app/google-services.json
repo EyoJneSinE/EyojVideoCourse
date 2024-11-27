@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "993641576872",
+    "project_id": "eyojvideocourse",
+    "storage_bucket": "eyojvideocourse.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993641576872:android:b567437642d8008ac3059d",
+        "android_client_info": {
+          "package_name": "com.eniskaner.eyojvideocourse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa5TgLZZouT7QPQ_JG24_ZurYdGvNJ-Kg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.gms.googleServices)
 }
 
 android {
@@ -21,10 +22,6 @@ android {
     }
 
     buildTypes {
-        debug {
-            isDebuggable = true
-            applicationIdSuffix = ".debug"
-        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -80,6 +77,11 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
 
+    //Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth)
+
     implementation(project(":navigationcourseapp"))
     implementation(project(":core:common"))
     implementation(project(":core:data"))
@@ -88,4 +90,5 @@ dependencies {
     implementation(project(":feature:main:courselist"))
     implementation(project(":feature:main:coursedetail"))
     implementation(project(":feature:main:coursevideo"))
+    implementation(project(":feature:main:auth"))
 }
