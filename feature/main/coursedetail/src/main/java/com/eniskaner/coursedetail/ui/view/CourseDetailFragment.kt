@@ -10,9 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.eniskaner.common.preferences.PreferencesManager
 import com.eniskaner.common.util.launchAndRepeatWithViewLifecycle
 import com.eniskaner.common.util.viewBinding
+import com.eniskaner.coursecommunicator.CourseFeatureCommunicator
 import com.eniskaner.coursedetail.R
 import com.eniskaner.coursedetail.databinding.FragmentCourseDetailBinding
+import com.eniskaner.coursedetail.navigation.CourseDetailNavGraph
 import com.eniskaner.coursedetail.ui.adapter.CourseDetailListAdapter
+import com.eniskaner.coursedetail.ui.adapter.CourseVideoClickListener
 import com.eniskaner.coursedetail.ui.adapter.EnrollClickListener
 import com.eniskaner.coursedetail.ui.event.CourseDetailsItem
 import com.eniskaner.coursedetail.ui.util.PaymentPopupDialog
@@ -21,7 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class CourseDetailFragment : Fragment(R.layout.fragment_course_detail), EnrollClickListener {
+class CourseDetailFragment : Fragment(R.layout.fragment_course_detail), EnrollClickListener, CourseVideoClickListener {
 
     @Inject
     lateinit var preferencesManager: PreferencesManager
@@ -31,11 +34,15 @@ class CourseDetailFragment : Fragment(R.layout.fragment_course_detail), EnrollCl
     private val courseDetailAdapter by lazy {
         CourseDetailListAdapter(
             enrollClickListener = this@CourseDetailFragment,
-            preferencesManager = preferencesManager
+            preferencesManager = preferencesManager,
+            videoClickListener = this@CourseDetailFragment
         )
     }
 
     private val courseDetailViewModel: CourseDetailViewModel by viewModels()
+
+    @Inject
+    lateinit var courseVideoFeatureCommunicator: CourseFeatureCommunicator
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -84,5 +91,14 @@ class CourseDetailFragment : Fragment(R.layout.fragment_course_detail), EnrollCl
             ).show()
         }
         paymentDialog.show()
+    }
+
+    override fun videoClickListener(videoUrl: String) {
+        courseVideoFeatureCommunicator.launchCourseFeature(
+            CourseFeatureCommunicator.CourseFeatureArgs(
+                previousRoute = CourseDetailNavGraph.ROUTE,
+                videoUrl = videoUrl
+            )
+        )
     }
 }

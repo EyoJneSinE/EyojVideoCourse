@@ -14,7 +14,8 @@ import com.eniskaner.coursedetail.ui.viewholder.LessonVideoViewHolder
 
 class CourseDetailListAdapter(
     private val enrollClickListener: EnrollClickListener,
-    private val preferencesManager: PreferencesManager
+    private val preferencesManager: PreferencesManager,
+    private val videoClickListener: CourseVideoClickListener
 ) : ListAdapter<CourseDetailsItem, RecyclerView.ViewHolder>(CourseDetailDiffUtil()) {
 
     override fun getItemViewType(position: Int): Int = when (getItem(position)) {
@@ -43,7 +44,10 @@ class CourseDetailListAdapter(
                     parent,
                     false
                 )
-                LessonVideoViewHolder(binding)
+                LessonVideoViewHolder(
+                    binding = binding,
+                    videoClickListener = videoClickListener
+                )
             }
 
             else -> throw IllegalArgumentException("Invalid view type")

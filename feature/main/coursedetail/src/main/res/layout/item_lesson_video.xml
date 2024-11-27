@@ -23,6 +23,7 @@
         android:id="@+id/iv_play"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:alpha="0.4"
         android:src="@drawable/ic_play_circle_outline"
         android:contentDescription="@null"
         app:layout_constraintTop_toTopOf="@id/iv_video_thumbnail"
