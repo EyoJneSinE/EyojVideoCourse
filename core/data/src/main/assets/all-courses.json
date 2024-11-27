@@ -6,7 +6,7 @@
         "category_name": "Technology",
         "description": "Learn the basics of programming with hands-on examples.",
         "price": "Free",
-        "thumbnail_url": "https://example.com/thumbnail1.png"
+        "thumbnail_url": "https://image.pollinations.ai/prompt/Introduction%20to%20Programming?width=1280&height=720&seed=42"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "category_name": "AI",
         "description": "Master advanced ML techniques.",
         "price": "$49.99",
-        "thumbnail_url": "https://example.com/thumbnail2.png"
+        "thumbnail_url": "https://image.pollinations.ai/prompt/Master%20advanced%20ML%20techniques%20including%20neural%20networks?width=1280&height=720&seed=42"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "category_name": "Technology",
         "description": "Learn front-end and back-end web development.",
         "price": "$29.99",
-        "thumbnail_url": "https://example.com/thumbnail3.png"
+        "thumbnail_url": "https://image.pollinations.ai/prompt/Web%20Development?width=1280&height=720&seed=42"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "category_name": "AI",
         "description": "Start your journey in artificial intelligence.",
         "price": "$19.99",
-        "thumbnail_url": "https://example.com/thumbnail4.png"
+        "thumbnail_url": "https://image.pollinations.ai/prompt/Start%20your%20journey%20in%20artificial%20intelligence%20Explore%20topics%20like%20neural%20networks%20and%20supervised%20learning?width=1280&height=720&seed=42"
     },
     {
         "id": 5,
@@ -42,6 +42,6 @@
         "category_name": "Design",
         "description": "Learn the principles of graphic design.",
         "price": "Free",
-        "thumbnail_url": "https://example.com/thumbnail5.png"
+        "thumbnail_url": "https://image.pollinations.ai/prompt/Graphic%20Design%20Basics%20Courses%20with%20lesson%20video?width=1280&height=720&seed=42"
     }
 ]

@@ -25,6 +25,9 @@ lottieVersion = "6.5.0"
 viewbinding = "8.7.2"
 activityCompose = "1.10.0-beta01"
 gsonVersion = "2.11.0"
+glide = "4.15.1"
+exoPlayer = "1.4.1"
+media3ExoplayerHls = "1.4.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,6 +53,11 @@ javax-inject = { group = "javax.inject", name = "javax.inject", version.ref = "j
 airbnb-lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottieVersion"}
 # Gson
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gsonVersion" }
+# Exo player
+androidx-media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "exoPlayer"}
+androidx-media3-exoplayer-dash = { group = "androidx.media3", name = "media3-exoplayer-dash", version.ref = "exoPlayer"}
+androidx-media3-ui = { group = "androidx.media3", name = "media3-ui", version.ref = "exoPlayer"}
+androidx-media3-exoplayer-hls = { group = "androidx.media3", name = "media3-exoplayer-hls", version.ref = "media3ExoplayerHls" }
 
 #ROOM
 androidx-room-runtime = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
@@ -69,6 +77,8 @@ ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devto
 androidx-viewbinding = { group = "androidx.databinding", name = "viewbinding", version.ref = "viewbinding" }
 
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

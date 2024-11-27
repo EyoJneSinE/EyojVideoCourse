@@ -4,6 +4,7 @@ object Constants {
     object PreferenceKeys {
         const val COURSE_APP_PREFERENCES = "app_preferences"
         const val COURSE_ONBOARDING_KEY_PREFS = "onboarding_completed"
+        const val PURCHASED_COURSES_KEY = "purchased_courses_key"
     }
 
     object Delays {
@@ -35,5 +36,11 @@ object Constants {
         const val DTO_THUMBNAIL_URL = "thumbnail_url"
         const val LESSON_ID = "lesson_id"
         const val LESSON_VIDEO_URL = "video_url"
+        const val LESSON_VIDEO_IMAGE = "video_image"
+    }
+
+    object ExoPlayerConstants {
+        const val PLAYBACK_POSITION_KEY = "playback_position"
+        const val PLAY_WHEN_READY_KEY = "play_when_ready"
     }
 }

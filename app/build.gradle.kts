@@ -87,4 +87,5 @@ dependencies {
     implementation(project(":feature:main:coursecommunicator"))
     implementation(project(":feature:main:courselist"))
     implementation(project(":feature:main:coursedetail"))
+    implementation(project(":feature:main:coursevideo"))
 }

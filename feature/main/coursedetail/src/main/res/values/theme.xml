@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="OrangeButtonWithIcon" parent="Widget.Material3.Button.IconButton">
+        <item name="android:background">@drawable/btn_orange_background</item>
+        <item name="android:icon">@drawable/ic_cart</item>
+        <item name="android:iconTint">@android:color/white</item>
+        <item name="android:textColor">@color/eyoj_gray_600</item>
+        <item name="android:paddingHorizontal">4dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
