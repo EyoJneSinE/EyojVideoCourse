@@ -1,6 +1,11 @@
 package com.eniskaner.courselist.navigation
 
-/*class CourseFeatureCommunicatorImpl @Inject constructor(
+import androidx.navigation.NavController
+import com.eniskaner.coursecommunicator.CourseFeatureCommunicator
+import com.eniskaner.navigationcourseapp.navigateWithAnimation
+import javax.inject.Inject
+
+class CourseFeatureCommunicatorImpl @Inject constructor(
     private val navController: NavController
 ) : CourseFeatureCommunicator {
 
@@ -11,4 +16,4 @@ package com.eniskaner.courselist.navigation
             inclusive = false
         )
     }
-}*/
+}
