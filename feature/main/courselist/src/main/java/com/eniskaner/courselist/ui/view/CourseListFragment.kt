@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.eniskaner.common.util.launchAndRepeatWithViewLifecycle
 import com.eniskaner.common.util.viewBinding
+import com.eniskaner.coursecommunicator.CourseDetailQualifier
 import com.eniskaner.coursecommunicator.CourseFeatureCommunicator
 import com.eniskaner.courselist.R
 import com.eniskaner.courselist.databinding.FragmentCourseListBinding
@@ -30,6 +31,7 @@ class CourseListFragment : Fragment(R.layout.fragment_course_list), CourseClickL
     private val binding: FragmentCourseListBinding by viewBinding(FragmentCourseListBinding::bind)
 
     @Inject
+    @CourseDetailQualifier
     lateinit var courseDetailCommunicator: CourseFeatureCommunicator
 
     private val courseListAdapter by lazy {
@@ -62,7 +64,7 @@ class CourseListFragment : Fragment(R.layout.fragment_course_list), CourseClickL
                 val combineList = mutableListOf<CourseListItem>().apply {
                     val categoryItems = state.categories.map { CourseListItem.CategoryItem(it) }
                     val categoryList = CourseListItem.CategoryList(categoryItems)
-                    addAll(categoryItems)
+                    //addAll(categoryItems)
                     addAll(listOf(categoryList))
                     addAll(state.filteredCourses.map { CourseListItem.CourseItem(it) })
                 }

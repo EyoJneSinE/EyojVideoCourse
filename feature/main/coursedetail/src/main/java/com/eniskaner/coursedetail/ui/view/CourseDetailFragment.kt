@@ -11,6 +11,7 @@ import com.eniskaner.common.preferences.PreferencesManager
 import com.eniskaner.common.util.launchAndRepeatWithViewLifecycle
 import com.eniskaner.common.util.viewBinding
 import com.eniskaner.coursecommunicator.CourseFeatureCommunicator
+import com.eniskaner.coursecommunicator.CourseVideoQualifier
 import com.eniskaner.coursedetail.R
 import com.eniskaner.coursedetail.databinding.FragmentCourseDetailBinding
 import com.eniskaner.coursedetail.navigation.CourseDetailNavGraph
@@ -42,6 +43,7 @@ class CourseDetailFragment : Fragment(R.layout.fragment_course_detail), EnrollCl
     private val courseDetailViewModel: CourseDetailViewModel by viewModels()
 
     @Inject
+    @CourseVideoQualifier
     lateinit var courseVideoFeatureCommunicator: CourseFeatureCommunicator
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

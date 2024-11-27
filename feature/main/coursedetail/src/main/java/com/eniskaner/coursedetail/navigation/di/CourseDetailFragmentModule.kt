@@ -1,5 +1,6 @@
 package com.eniskaner.coursedetail.navigation.di
 
+import com.eniskaner.coursecommunicator.CourseDetailQualifier
 import com.eniskaner.coursecommunicator.CourseFeatureCommunicator
 import com.eniskaner.coursedetail.navigation.CourseDetailFeatureCommunicatorImpl
 import dagger.Binds
@@ -12,6 +13,7 @@ import dagger.hilt.android.components.FragmentComponent
 interface CourseDetailFragmentModule {
 
     @Binds
+    @CourseDetailQualifier
     fun bindCourseDetailCommunicator(
         courseDetailCommunicatorImpl: CourseDetailFeatureCommunicatorImpl
     ): CourseFeatureCommunicator
