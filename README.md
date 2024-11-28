@@ -2,6 +2,8 @@
 
 Eyoj Video Course is a modular Android application designed to provide users with a seamless video course experience. It integrates modern Android technologies and adheres to Clean Architecture principles for scalability and maintainability.
 
+https://github.com/user-attachments/assets/745fa457-e029-4216-ac86-ef07dbb070e1
+
 ---
 
 ## Table of Contents
