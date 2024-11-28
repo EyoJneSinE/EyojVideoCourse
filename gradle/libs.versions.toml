@@ -42,6 +42,10 @@ gms-googleServices = "4.4.2"
 firebase-firestore = "25.0.0"
 firebase-firestore-storage = "21.0.0"
 timber = "5.0.1"
+truth = "1.4.4"
+mockito-core = "5.5.0"
+mockito-inline = "4.0.0"
+mockito-junit = "5.5.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -108,6 +112,11 @@ androidx-viewbinding = { group = "androidx.databinding", name = "viewbinding", v
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
+truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito-core" }
+mockito-inline = { group = "org.mockito", name = "mockito-inline", version.ref = "mockito-inline" }
+mockito-junit = { group = "org.mockito", name = "mockito-junit-jupiter", version.ref = "mockito-junit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
