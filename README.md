@@ -127,6 +127,9 @@ The application follows the **Clean Architecture** pattern, ensuring a clear sep
 ### Login Screen
 <img src="https://github.com/user-attachments/assets/ad1fd155-d276-4d3b-a060-b0b856b327bc" width="200" height="400" />
 
+### Push Notification with One Signal
+<img src="https://github.com/user-attachments/assets/bd693b77-d582-4f7c-80ab-284a2764f432" width="200" height="400" />
+
 ---
 
 ## Setup
