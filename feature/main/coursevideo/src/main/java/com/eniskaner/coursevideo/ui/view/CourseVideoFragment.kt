@@ -1,14 +1,13 @@
 package com.eniskaner.coursevideo.ui.view
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.OptIn
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.media3.common.MediaItem
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
+import com.eniskaner.common.preferences.PreferencesManager
 import com.eniskaner.common.util.Constants.ExoPlayerConstants.PLAYBACK_POSITION_KEY
 import com.eniskaner.common.util.Constants.ExoPlayerConstants.PLAY_WHEN_READY_KEY
 import com.eniskaner.common.util.parcelable
@@ -16,8 +15,8 @@ import com.eniskaner.common.util.viewBinding
 import com.eniskaner.coursecommunicator.CourseFeatureCommunicator
 import com.eniskaner.coursevideo.R
 import com.eniskaner.coursevideo.databinding.FragmentCourseVideoBinding
-import com.eniskaner.coursevideo.ui.util.FullscreenHandler
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @UnstableApi
 @AndroidEntryPoint
@@ -28,6 +27,10 @@ class CourseVideoFragment : Fragment(R.layout.fragment_course_video) {
     private var exoPlayer: ExoPlayer? = null
     private var playbackPosition = 0L
     private var playWhenReady = true
+
+    @Inject
+    lateinit var preferencesManager: PreferencesManager
+    private var lessonId: Int? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,6 +45,11 @@ class CourseVideoFragment : Fragment(R.layout.fragment_course_video) {
         val args = arguments?.parcelable<CourseFeatureCommunicator.CourseFeatureArgs>(
             CourseFeatureCommunicator.COURSE_FEATURE_NAV_KEY
         )
+
+        lessonId = args?.lessonId
+        lessonId?.let {
+            playbackPosition = preferencesManager.getVideoProgress(it)
+        }
         args?.videoUrl?.let {
             preparePlayer(it)
         }
@@ -63,6 +71,9 @@ class CourseVideoFragment : Fragment(R.layout.fragment_course_video) {
         exoPlayer?.let { player ->
             playbackPosition = player.currentPosition
             playWhenReady = player.playWhenReady
+            lessonId?.let {
+                preferencesManager.saveVideoProgress(it, playbackPosition)
+            }
             player.release()
             exoPlayer = null
         }

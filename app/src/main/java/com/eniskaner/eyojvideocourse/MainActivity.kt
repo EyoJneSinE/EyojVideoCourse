@@ -15,6 +15,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.eniskaner.auth.navigation.CourseAuthNavGraph
 import com.eniskaner.common.preferences.PreferencesManager
 import com.eniskaner.courselist.navigation.CoursesNavGraph
+import com.eniskaner.coursevideo.navigation.CourseVideoNavGraph
 import com.eniskaner.eyojvideocourse.databinding.ActivityMainBinding
 import com.eniskaner.navigationcourseapp.NavigationGraph
 import com.eniskaner.profile.navigation.CourseProfileNavGraph
@@ -68,7 +69,8 @@ class MainActivity : AppCompatActivity() {
             binding.bottomNavigation.isVisible = when (currentRoute) {
                 CourseAuthNavGraph.START_DESTINATION,
                      CourseAuthNavGraph.LOGIN_DESTINATION,
-                         CourseAuthNavGraph.REGISTER_DESTINATION -> false
+                         CourseAuthNavGraph.REGISTER_DESTINATION,
+                              CourseVideoNavGraph.START_DESTINATION-> false
                 else -> true
             }
         }

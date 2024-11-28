@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.eniskaner.common.util.Constants.InvalidTypeConstants.INVALID_TYPE_MESSAGE
 import com.eniskaner.courselist.databinding.CategoryListBinding
 import com.eniskaner.courselist.databinding.ItemCourseBinding
 import com.eniskaner.courselist.ui.event.CourseListItem
@@ -56,7 +57,7 @@ class CourseListAdapter(
                 CourseListViewHolder(binding, courseClickListener)
             }
 
-            else -> throw IllegalArgumentException("Invalid view type")
+            else -> throw IllegalArgumentException(INVALID_TYPE_MESSAGE)
         }
     }
 
