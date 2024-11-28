@@ -6,9 +6,10 @@
     android:id="@+id/b_category"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="16dp"
     android:paddingHorizontal="24dp"
     app:backgroundTint="@null"
     tools:text="Categories"
+    android:textColor="@color/eyoj_gray_600"
     android:textSize="14sp"
     style="@style/CustomMaterialButton"/>
