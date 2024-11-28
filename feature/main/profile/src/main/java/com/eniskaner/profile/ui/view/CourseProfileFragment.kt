@@ -14,6 +14,7 @@ import com.eniskaner.coursecommunicator.CourseFeatureCommunicator
 import com.eniskaner.profile.R
 import com.eniskaner.profile.databinding.FragmentCourseProfileBinding
 import com.eniskaner.profile.navigation.CourseProfileNavGraph
+import com.eniskaner.profile.ui.view.ThemeUtils.toggleDarkMode
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -58,6 +59,7 @@ class CourseProfileFragment : Fragment(R.layout.fragment_course_profile) {
             preferencesManager.isDarkMode = isChecked
             updateModeUI(isChecked)
             toggleDarkMode(isChecked)
+            if (isChecked) requireActivity().recreate()
         }
     }
 
@@ -112,10 +114,4 @@ class CourseProfileFragment : Fragment(R.layout.fragment_course_profile) {
         binding.switchMode.isChecked = isDarkMode
     }
 
-    private fun toggleDarkMode(enable: Boolean) {
-        val mode = if (enable) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
-        AppCompatDelegate.setDefaultNightMode(mode)
-
-        requireActivity().recreate()
-    }
 }
