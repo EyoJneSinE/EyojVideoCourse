@@ -1,60 +1,121 @@
 package com.eniskaner.profile.ui.view
 
+import android.content.res.Configuration
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import com.eniskaner.common.preferences.PreferencesManager
+import com.eniskaner.common.util.launchAndRepeatWithViewLifecycle
+import com.eniskaner.common.util.viewBinding
+import com.eniskaner.coursecommunicator.CourseAuthQualifierForProfileScreen
+import com.eniskaner.coursecommunicator.CourseFeatureCommunicator
 import com.eniskaner.profile.R
+import com.eniskaner.profile.databinding.FragmentCourseProfileBinding
+import com.eniskaner.profile.navigation.CourseProfileNavGraph
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+@AndroidEntryPoint
+class CourseProfileFragment : Fragment(R.layout.fragment_course_profile) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CourseProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class CourseProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val binding: FragmentCourseProfileBinding by viewBinding(FragmentCourseProfileBinding::bind)
+
+    private lateinit var auth: FirebaseAuth
+    private var user: String? = null
+
+    @Inject
+    @CourseAuthQualifierForProfileScreen
+    lateinit var courseAuthCommunicator: CourseFeatureCommunicator
+
+    @Inject
+    lateinit var preferencesManager: PreferencesManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
+        auth = Firebase.auth
+        user = auth.currentUser?.email
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setUserInteraction()
+
+        launchAndRepeatWithViewLifecycle {
+            updateUIWithLoggedInUser()
+        }
+
+        val isDarkMode = preferencesManager.isDarkMode
+        updateModeUI(isDarkMode)
+
+        binding.switchMode.setOnCheckedChangeListener { _, isChecked ->
+            preferencesManager.isDarkMode = isChecked
+            updateModeUI(isChecked)
+            toggleDarkMode(isChecked)
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_course_profile, container, false)
+    private fun setUserInteraction() = with(binding) {
+        btnLogin.setOnClickListener { openAuthNavigation() }
+        btnLogout.setOnClickListener { onLogout() }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CourseProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CourseProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun updateUIWithLoggedInUser() = with(binding) {
+        user = auth.currentUser?.email
+        user?.let {
+            progressUser.isVisible = true
+            updateVisibilityWith(it)
+            val fullName = it
+            txtFullName.text = fullName
+            txtAvatarLabel.text = fullName.take(1)
+            txtPhone.text = getString(R.string.phone_number)
+            txtAddress.text = getString(R.string.user_adress)
+            progressUser.isVisible = false
+        }
+    }
+
+    private fun onLogout() = with(binding) {
+        FirebaseAuth.getInstance().signOut()
+        user = null
+        btnLogin.isVisible = user != null
+        cardviewProfile.isVisible = user == null
+        btnLogout.isVisible = user == null
+        courseAuthCommunicator.launchCourseFeature(
+            CourseFeatureCommunicator.CourseFeatureArgs(
+                previousRoute = CourseProfileNavGraph.ROUTE
+            )
+        )
+    }
+
+    private fun updateVisibilityWith(user: String?) = with(binding) {
+        btnLogin.isVisible = user == null
+        cardviewProfile.isVisible = user != null
+        btnLogout.isVisible = user != null
+    }
+
+    private fun openAuthNavigation() {
+        courseAuthCommunicator.launchCourseFeature(
+            CourseFeatureCommunicator.CourseFeatureArgs(
+                previousRoute = CourseProfileNavGraph.ROUTE
+            )
+        )
+    }
+
+    private fun updateModeUI(isDarkMode: Boolean) {
+        binding.tvMode.text = if (isDarkMode) getString(R.string.dark_mode) else getString(R.string.light_mode)
+        binding.switchMode.isChecked = isDarkMode
+    }
+
+    private fun toggleDarkMode(enable: Boolean) {
+        val mode = if (enable) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+        AppCompatDelegate.setDefaultNightMode(mode)
+
+        requireActivity().recreate()
     }
 }
