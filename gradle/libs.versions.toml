@@ -19,6 +19,7 @@ lifecycleViewmodelKtx = "2.8.1"
 lifecycleLivedataKtx = "2.8.1"
 javaxInject = "1"
 kotlin-parcelize = "2.0.20"
+onesignal = "5.0.0"
 room = "2.6.1"
 kotlinxSerialization = "1.6.3"
 lottieVersion = "6.5.0"
@@ -95,6 +96,7 @@ firebase-firestore = { module = "com.google.firebase:firebase-firestore", versio
 firebase-firestore-storage = { module = "com.google.firebase:firebase-firestore", version.ref = "firebase-firestore-storage"}
 gms-googleServices = { module = "com.google.gms:google-services", version.ref = "gms-googleServices" }
 #Timber
+onesignal = { module = "com.onesignal:OneSignal", version.ref = "onesignal" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber"}
 
 # Dependencies of the included build-logic
