@@ -91,4 +91,5 @@ dependencies {
     implementation(project(":feature:main:coursedetail"))
     implementation(project(":feature:main:coursevideo"))
     implementation(project(":feature:main:auth"))
+    implementation(project(":feature:main:profile"))
 }

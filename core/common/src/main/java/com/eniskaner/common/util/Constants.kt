@@ -5,6 +5,7 @@ object Constants {
         const val COURSE_APP_PREFERENCES = "app_preferences"
         const val COURSE_ONBOARDING_KEY_PREFS = "onboarding_completed"
         const val PURCHASED_COURSES_KEY = "purchased_courses_key"
+        const val DARK_MODE_KEY = "DARK_MODE_KEY"
     }
 
     object Delays {

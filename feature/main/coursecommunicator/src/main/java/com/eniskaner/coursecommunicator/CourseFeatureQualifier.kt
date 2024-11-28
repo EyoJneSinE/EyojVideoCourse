@@ -17,3 +17,7 @@ annotation class CourseListQualifierForSignUpScreen
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class CourseListQualifierForSignInScreen
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class CourseAuthQualifierForProfileScreen
