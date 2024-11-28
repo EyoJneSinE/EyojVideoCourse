@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.eniskaner.common.util.Constants.PreferenceKeys.COURSE_APP_PREFERENCES
 import com.eniskaner.common.util.Constants.PreferenceKeys.COURSE_ONBOARDING_KEY_PREFS
+import com.eniskaner.common.util.Constants.PreferenceKeys.DARK_MODE_KEY
 import com.eniskaner.common.util.Constants.PreferenceKeys.PURCHASED_COURSES_KEY
 
 class PreferencesManager(context: Context) {
@@ -23,4 +24,8 @@ class PreferencesManager(context: Context) {
         set(value) = sharedPreferences.edit {
             putStringSet(PURCHASED_COURSES_KEY, value)
         }
+
+    var isDarkMode: Boolean
+        get() = sharedPreferences.getBoolean(DARK_MODE_KEY, false)
+        set(value) = sharedPreferences.edit().putBoolean(DARK_MODE_KEY, value).apply()
 }
