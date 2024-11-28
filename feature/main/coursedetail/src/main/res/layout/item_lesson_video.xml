@@ -59,4 +59,18 @@
         app:layout_constraintTop_toBottomOf="@id/iv_video_thumbnail"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_purchase_required"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/you_need_to_purchase_this_course_to_watch_this_video"
+        android:gravity="center"
+        android:textColor="@color/eyoj_gray_600"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

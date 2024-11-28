@@ -91,15 +91,17 @@ class CourseDetailFragment : Fragment(R.layout.fragment_course_detail), EnrollCl
                 requireContext(),
                 getString(R.string.payment_completed_successfully), Toast.LENGTH_SHORT
             ).show()
+            requireActivity().recreate()
         }
         paymentDialog.show()
     }
 
-    override fun videoClickListener(videoUrl: String) {
+    override fun videoClickListener(videoUrl: String, lessonId: Int) {
         courseVideoFeatureCommunicator.launchCourseFeature(
             CourseFeatureCommunicator.CourseFeatureArgs(
                 previousRoute = CourseDetailNavGraph.ROUTE,
-                videoUrl = videoUrl
+                videoUrl = videoUrl,
+                lessonId = lessonId
             )
         )
     }

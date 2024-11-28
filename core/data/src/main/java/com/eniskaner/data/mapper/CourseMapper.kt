@@ -51,6 +51,7 @@ class CourseDtoToUIModelMapper @Inject constructor() : Mapper<CourseDto, CourseU
 class LessonDtoToUIModelMapper @Inject constructor() : Mapper<LessonDto, LessonUIModel> {
     override fun map(input: LessonDto): LessonUIModel {
         return LessonUIModel(
+            lessonCourseId = input.lessonCourseId,
             lessonId = input.lessonId,
             title = input.title,
             duration = input.duration,
@@ -117,6 +118,7 @@ class CourseDtoToEntityMapper @Inject constructor() : Mapper<CourseDto, CourseEn
 class LessonDtoToEntityMapper @Inject constructor() : Mapper<LessonDto, LessonEntity> {
     override fun map(input: LessonDto): LessonEntity {
         return LessonEntity(
+            lessonCourseId = input.lessonCourseId,
             lessonId = input.lessonId,
             title = input.title,
             duration = input.duration,
@@ -183,6 +185,7 @@ class CourseEntityToUIModelMapper @Inject constructor() : Mapper<CourseEntity, C
 class LessonEntityToUIModelMapper @Inject constructor() : Mapper<LessonEntity, LessonUIModel> {
     override fun map(input: LessonEntity): LessonUIModel {
         return LessonUIModel(
+            lessonCourseId = input.lessonCourseId,
             lessonId = input.lessonId,
             title = input.title,
             duration = input.duration,
