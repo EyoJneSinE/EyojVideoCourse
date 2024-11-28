@@ -12,6 +12,10 @@ object Constants {
         const val DEFAULT_DELAY = 1500L
     }
 
+    object InvalidTypeConstants {
+        const val INVALID_TYPE_MESSAGE = "Invalid type"
+    }
+
     object AssetConstants {
         const val ALL_COURSE_LIST = "all-courses.json"
         const val COURSE_DETAIL = "course-details.json"
@@ -36,6 +40,7 @@ object Constants {
         const val DTO_CATEGORY_NAME = "category_name"
         const val DTO_THUMBNAIL_URL = "thumbnail_url"
         const val LESSON_ID = "lesson_id"
+        const val LESSON_COURSE_ID = "lesson_course_id"
         const val LESSON_VIDEO_URL = "video_url"
         const val LESSON_VIDEO_IMAGE = "video_image"
     }

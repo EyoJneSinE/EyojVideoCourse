@@ -9,16 +9,18 @@
         "thumbnail_url": "https://image.pollinations.ai/prompt/Introduction%20to%20Programming?width=1280&height=720&seed=42",
         "lessons": [
             {
+                "lesson_course_id": 1,
                 "lesson_id": 1,
                 "title": "Introduction",
-                "duration": "10:00",
+                "duration": 100000,
                 "video_url": "https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4",
                 "video_image": "https://image.pollinations.ai/prompt/Introduction%20to%20Programming%20wit%20video%20course%20in%20web?width=1280&height=720&seed=42"
             },
             {
+                "lesson_course_id": 1,
                 "lesson_id": 2,
                 "title": "Variables and Data Types",
-                "duration": "20:00",
+                "duration": 100000,
                 "video_url": "https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4",
                 "video_image": "https://image.pollinations.ai/prompt/Variables%20and%20Data%20Types?width=1280&height=720&seed=42"
             }
@@ -34,16 +36,18 @@
         "thumbnail_url": "https://image.pollinations.ai/prompt/Master%20advanced%20ML%20techniques%20including%20neural%20networks?width=1280&height=720&seed=42",
         "lessons": [
             {
-                "lesson_id": 1,
+                "lesson_course_id": 2,
+                "lesson_id": 3,
                 "title": "Neural Networks Basics",
-                "duration": "15:00",
+                "duration": 100000,
                 "video_url": "https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4",
                 "video_image": "https://image.pollinations.ai/prompt/Neural%20Networks%20Basics%20abot%20course%20video?width=1280&height=720&seed=42"
             },
             {
-                "lesson_id": 2,
+                "lesson_course_id": 2,
+                "lesson_id": 4,
                 "title": "Reinforcement Learning",
-                "duration": "25:00",
+                "duration": 100000,
                 "video_url": "https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4",
                 "video_image": "https://image.pollinations.ai/prompt/Reinforcement%20Learning%20about%20video%20course?width=1280&height=720&seed=42"
             }
@@ -59,16 +63,18 @@
         "thumbnail_url": "https://image.pollinations.ai/prompt/Web%20Development?width=1280&height=720&seed=42",
         "lessons": [
             {
-                "lesson_id": 1,
+                "lesson_course_id": 3,
+                "lesson_id": 5,
                 "title": "HTML Basics",
-                "duration": "12:00",
+                "duration": 100000,
                 "video_url": "https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4",
                 "video_image": "https://image.pollinations.ai/prompt/HTML%20Basics%20and%20showing%20system,%20properties%20with%20video%20course?width=1280&height=720&seed=42"
             },
             {
-                "lesson_id": 2,
+                "lesson_course_id": 3,
+                "lesson_id": 6,
                 "title": "CSS and Styling",
-                "duration": "18:00",
+                "duration": 100000,
                 "video_url": "https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4",
                 "video_image": "https://image.pollinations.ai/prompt/CSS%20and%20Styling%20and%20showing%20system,%20properties%20with%20video%20course?width=1280&height=720&seed=42"
             }
@@ -84,16 +90,18 @@
         "thumbnail_url": "https://image.pollinations.ai/prompt/Start%20your%20journey%20in%20artificial%20intelligence%20Explore%20topics%20like%20neural%20networks%20and%20supervised%20learning?width=1280&height=720&seed=42",
         "lessons": [
             {
-                "lesson_id": 1,
+                "lesson_course_id": 4,
+                "lesson_id": 7,
                 "title": "What is AI?",
-                "duration": "10:00",
+                "duration": 100000,
                 "video_url": "https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4",
                 "video_image": "https://image.pollinations.ai/prompt/What%20is%20AI??width=1280&height=720&seed=42"
             },
             {
-                "lesson_id": 2,
+                "lesson_course_id": 4,
+                "lesson_id": 8,
                 "title": "Supervised Learning",
-                "duration": "15:00",
+                "duration": 100000,
                 "video_url": "https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4",
                 "video_image": "https://image.pollinations.ai/prompt/Supervised%20Learning%20with%20ai%20AI??width=1280&height=720&seed=42"
             }
@@ -109,16 +117,18 @@
         "thumbnail_url": "https://image.pollinations.ai/prompt/Graphic%20Design%20Basics%20Courses%20with%20lesson%20video?width=1280&height=720&seed=42",
         "lessons": [
             {
-                "lesson_id": 1,
+                "lesson_course_id": 5,
+                "lesson_id": 9,
                 "title": "Introduction to Graphic Design",
-                "duration": "12:00",
+                "duration": 100000,
                 "video_url": "https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4",
                 "video_image": "https://image.pollinations.ai/prompt/Introduction%20to%20Graphic%20Design?width=1280&height=720&seed=42"
             },
             {
-                "lesson_id": 2,
+                "lesson_course_id": 5,
+                "lesson_id": 10,
                 "title": "Color Theory Basics",
-                "duration": "18:00",
+                "duration": 100000,
                 "video_url": "https://www.rmp-streaming.com/media/big-buck-bunny-360p.mp4",
                 "video_image": "https://image.pollinations.ai/prompt/Color%20Theory%20Basics%20and%20what%20is%20sheme?width=1280&height=720&seed=42"
             }

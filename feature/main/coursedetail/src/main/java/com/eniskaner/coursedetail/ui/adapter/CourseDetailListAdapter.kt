@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.eniskaner.common.preferences.PreferencesManager
+import com.eniskaner.common.util.Constants.InvalidTypeConstants.INVALID_TYPE_MESSAGE
 import com.eniskaner.coursedetail.databinding.ItemCourseDetailBinding
 import com.eniskaner.coursedetail.databinding.ItemLessonVideoBinding
 import com.eniskaner.coursedetail.ui.event.CourseDetailViewType
@@ -46,11 +47,12 @@ class CourseDetailListAdapter(
                 )
                 LessonVideoViewHolder(
                     binding = binding,
-                    videoClickListener = videoClickListener
+                    videoClickListener = videoClickListener,
+                    preferencesManager = preferencesManager
                 )
             }
 
-            else -> throw IllegalArgumentException("Invalid view type")
+            else -> throw IllegalArgumentException(INVALID_TYPE_MESSAGE)
         }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

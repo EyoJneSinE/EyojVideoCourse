@@ -28,4 +28,12 @@ class PreferencesManager(context: Context) {
     var isDarkMode: Boolean
         get() = sharedPreferences.getBoolean(DARK_MODE_KEY, false)
         set(value) = sharedPreferences.edit().putBoolean(DARK_MODE_KEY, value).apply()
+
+    fun saveVideoProgress(lessonId: Int, progress: Long) {
+        sharedPreferences.edit().putLong("video_progress_$lessonId", progress).apply()
+    }
+
+    fun getVideoProgress(lessonId: Int): Long {
+        return sharedPreferences.getLong("video_progress_$lessonId", 0L)
+    }
 }

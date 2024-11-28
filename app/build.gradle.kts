@@ -82,6 +82,8 @@ dependencies {
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.auth)
 
+    implementation(libs.onesignal)
+
     implementation(project(":navigationcourseapp"))
     implementation(project(":core:common"))
     implementation(project(":core:data"))

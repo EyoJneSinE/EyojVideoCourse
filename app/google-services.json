@@ -12,7 +12,12 @@
           "package_name": "com.eniskaner.eyojvideocourse"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "993641576872-3e312eeo2rcjrr7s0bafdhf3tc1v8dvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBa5TgLZZouT7QPQ_JG24_ZurYdGvNJ-Kg"
@@ -20,7 +25,41 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "993641576872-3e312eeo2rcjrr7s0bafdhf3tc1v8dvf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993641576872:android:86ae7c40f3040adbc3059d",
+        "android_client_info": {
+          "package_name": "com.eniskaner.eyojvideocourse.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "993641576872-3e312eeo2rcjrr7s0bafdhf3tc1v8dvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa5TgLZZouT7QPQ_JG24_ZurYdGvNJ-Kg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "993641576872-3e312eeo2rcjrr7s0bafdhf3tc1v8dvf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

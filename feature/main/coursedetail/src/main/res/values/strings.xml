@@ -9,4 +9,5 @@
     <string name="empty_string" />
     <string name="payment_completed_successfully">Payment completed successfully!</string>
     <string name="video_duration">Duration: %1$s min</string>
+    <string name="you_need_to_purchase_this_course_to_watch_this_video">You need to purchase this course to watch this video.</string>
 </resources>
