@@ -39,16 +39,12 @@ class CourseAuthFragment : Fragment(R.layout.fragment_course_auth) {
     private fun setAuthUserInteractions() = with(binding) {
         btnLogin.setOnClickListener {
             navController.navigateWithAnimation(
-                route = CourseAuthNavGraph.LOGIN_DESTINATION,
-                popUpTo = CourseAuthNavGraph.ROUTE,
-                inclusive = true
+                route = CourseAuthNavGraph.LOGIN_DESTINATION
             )
         }
         btnRegister.setOnClickListener {
             navController.navigateWithAnimation(
-                route = CourseAuthNavGraph.REGISTER_DESTINATION,
-                popUpTo = CourseAuthNavGraph.ROUTE,
-                inclusive = true
+                route = CourseAuthNavGraph.REGISTER_DESTINATION
             )
         }
     }
